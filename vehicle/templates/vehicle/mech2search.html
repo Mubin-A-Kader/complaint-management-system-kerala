@@ -1,0 +1,54 @@
+{% extends 'vehicle/adminbase.html' %}
+{% block content %}
+{% load static %}
+{% load widget_tweaks %}
+	<!-- main content -->
+	<div class="wrapper">
+
+<!-- ****** table  start ********** -->
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3 style="color:red; text-align:center" >Water authority Workers
+						</h3>
+
+					</div>
+					<div class="card-content">
+						<table>
+							<thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Profile Picture</th>
+                  <th>Mobile</th>
+                  <th>Address</th>
+                  <th>Skills</th>
+                  <th>District</th>
+                  
+                </tr>
+							</thead>
+							<tbody>
+              {% for i in myuser %}
+                <tr>
+                  <td> {{i.get_name}}</td>
+                  <td> <img src="{% static i.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
+                  <td>{{i.mobile}}</td>
+                  <td>{{i.address}}</td>
+                  <td>{{i.skill}}</td>
+                  <td>{{i.district}}</td>
+                 
+                  
+                </tr>
+                {% endfor %}
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- ****** table start ********** -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+	<!-- end main content -->
+{% endblock content %}
